@@ -1,0 +1,13 @@
+kubeless/go-init@sha256:44e442f8b7ac30701bd5233efc1a4d9c2e4e79c5d4c3d09c49399f00793852af
+
+
+kubeless function deploy isprime \
+--from-file func.go \
+--dependencies Gopkg.toml \
+--handler func.IsPrime \
+--runtime go1.12 \
+--env http_proxy:http://httpproxy.bfm.com:8080 \
+--env https_proxy:http://sftpproxy.bfm.com:8080 \
+--env HTTPS_PROXY:http://sftpproxy.bfm.com:8080 \
+--env HTTP_PROXY:http://httpproxy.bfm.com:8080 \
+--env no_proxy:.local,.blkint.com,.bfm.com,.blackrock.com,.mlam.ml.com,*.local,*.blkint.com,*.bfm.com,*.blackrock.com,*.mlam.ml.com,localhost,127.0.0.1
